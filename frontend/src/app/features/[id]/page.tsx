@@ -130,7 +130,7 @@ export default function FeaturePage({ params }: { params: Promise<{ id: string }
             <ArrowLeft size={16}/> Back to Dashboard
           </Link>
         </nav>
-        <UserButton afterSignOutUrl="/sign-in" />
+        <UserButton />
       </header>
 
       <main className={styles.main} style={{gridTemplateColumns: '1fr', maxWidth: '1000px', margin: '0 auto', width: '100%'}}>

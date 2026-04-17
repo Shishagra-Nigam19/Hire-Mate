@@ -23,7 +23,7 @@ export default function Home() {
           <span className="gradient-text">HireMate</span>
         </div>
         <div style={{display: 'flex', alignItems: 'center', gap: '1.5rem'}}>
-          <UserButton afterSignOutUrl="/sign-in" />
+          <UserButton />
         </div>
       </header>
 

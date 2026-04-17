@@ -79,7 +79,7 @@ export default function JobsPage() {
           <Link href="/" style={{color: 'var(--text-muted)', textDecoration: 'none'}}>Assistant</Link>
           <Link href="/jobs" style={{color: 'var(--primary)', fontWeight: 'bold', textDecoration: 'none'}}>Web Job Search</Link>
         </nav>
-        <UserButton afterSignOutUrl="/sign-in" />
+        <UserButton />
       </header>
 
       <main className={styles.main} style={{gridTemplateColumns: '1fr', maxWidth: '900px', margin: '0 auto', width: '100%'}}>
