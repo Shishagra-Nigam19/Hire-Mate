@@ -1,0 +1,12 @@
+# Python dependencies
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Database
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
