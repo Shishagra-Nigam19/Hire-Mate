@@ -51,22 +51,6 @@
 
 ---
 
-## 📸 Gallery
-
-<div align="center">
-  <h3>✨ The command center (Dashboard)</h3>
-  <img src="assets/dashboard.png" width="800" alt="Dashboard" />
-  <br/><br/>
-  <h3>🎯 AI-Powered Interview Coach</h3>
-  <img src="assets/interview.png" width="800" alt="Interview Prep" />
-  <br/><br/>
-  <h3>💬 Personalized Career Roadmap</h3>
-  <img src="assets/chat.png" width="800" alt="Career Guidance" />
-  <br/><br/>
-  <h3>🧪 Depth Analysis (ATS Match)</h3>
-  <img src="assets/analysis.png" width="800" alt="ATS Analysis" />
-</div>
-
 ---
 
 ## 🛠️ Technical Architecture
