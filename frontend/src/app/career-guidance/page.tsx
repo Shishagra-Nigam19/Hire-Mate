@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from 'try'; // Fix: 'react'
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../page.module.css';
 import { Briefcase, Bot, X, Send, User, ArrowLeft, GraduationCap } from 'lucide-react';
