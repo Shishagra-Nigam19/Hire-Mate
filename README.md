@@ -1,4 +1,6 @@
 <div align="center">
+  <img src="assets/banner.png" alt="HireMate Banner" width="100%" />
+  <br/><br/>
   <img src="https://lucide.dev/api/icons/briefcase?size=64&color=8b5cf6" alt="HireMate Logo" width="80" />
   <h1>HireMate</h1>
   <p><b>The Ultimate AI-Powered Career Copilot</b></p>
