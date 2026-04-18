@@ -37,7 +37,7 @@ export default function Home() {
 
         <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', width: '100%', maxWidth: '1000px', marginTop:'2rem'}}>
           {features.map((f) => (
-            <Link href={f.href || `/features/${f.id}`} key={f.id} style={{textDecoration: 'none'}}>
+            <Link href={f.href || `/${f.id}`} key={f.id} style={{textDecoration: 'none'}}>
               <div className="glass-panel" style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: '2rem', borderRadius: '16px', transition: 'all 0.3s ease', cursor: 'pointer', textAlign: 'left', height: '100%'}}>
                 <div style={{color: 'var(--secondary)', marginBottom: '1.5rem', padding: '1rem', background: 'rgba(255,255,255,0.05)', borderRadius: '12px'}}>
                   {f.icon}
