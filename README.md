@@ -27,23 +27,27 @@
 
 ## 🚀 Core Agents & Features
 
-HireMate utilizes a "Swarm of Agents" approach, where specialized AI models are tuned for specific tasks:
-
 ### 📄 1. The Resume Optimizer
 *   **Goal**: Get your resume past the "Black Hole" of ATS.
-*   **How**: Analyzes your resume PDF against a specific Job Description to provide keyword suggestions and formatting tips.
+*   **Action**: Analyzes your resume PDF against a specific Job Description.
+<img src="assets/dashboard.png" width="600" alt="Resume Optimizer" />
 
 ### 🎯 2. Interview Prep Coach
 *   **Goal**: Master your behavioral and technical presence.
-*   **How**: Conducts real-time mock interviews, providing instant feedback on your answers and body language (text-based).
+*   **Action**: Real-time mock interviews with instant AI feedback.
+<img src="assets/interview.png" width="600" alt="Interview Coach" />
 
 ### 🔍 3. Live Web Job search
 *   **Goal**: Find hidden gems in real-time.
-*   **How**: Scours the internet for the most recent job postings specifically matched to your resume and experience level.
+*   **Action**: Scours the internet for matched job postings.
 
-### 📈 4. ATS Score Simulator
-*   **Goal**: Predict your success before you apply.
-*   **How**: Uses scoring algorithms to simulate how a corporate ATS will rank your profile.
+### 🎓 4. Career Guidance Counselor
+*   **Goal**: Personalized advice on transitions.
+<img src="assets/chat.png" width="600" alt="Career Guidance" />
+
+### 📈 5. ATS Score Simulator
+*   **Goal**: Predict your ranking before you apply.
+<img src="assets/analysis.png" width="600" alt="ATS Analysis" />
 
 ---
 
