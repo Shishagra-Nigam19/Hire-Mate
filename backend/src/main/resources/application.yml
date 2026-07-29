@@ -1,0 +1,154 @@
+spring:
+  application:
+    name: hiremate-backend
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:h2:mem:hirematedb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 50
+        jdbc:
+          batch_size: 25
+        order_inserts: true
+        order_updates: true
+  mail:
+    host: localhost
+    port: 1025
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+app:
+  jwt:
+    secret: 9a6e2c8f1a4b7d3e5f8c9b2a1d4e7f3c6a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0
+    expiration-ms: 900000 # 15 minutes
+    refresh-expiration-ms: 604800000 # 7 days
+  cors:
+    allowed-origins: "http://localhost:3000,http://localhost:5173"
+    allowed-methods: "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+    allowed-headers: "*"
+    allow-credentials: true
+  s3:
+    enabled: false
+    bucket-name: hiremate-dev-bucket
+    region: us-east-1
+    access-key: mock-key
+    secret-key: mock-secret
+  storage:
+    local-dir: ./uploads/resumes
+  mail:
+    from-email: no-reply@hiremate.com
+    sender-name: HireMate Platform
+  rate-limiting:
+    enabled: true
+    auth-capacity: 5
+    auth-refill-tokens: 5
+    auth-refill-duration-seconds: 60
+    api-capacity: 100
+    api-refill-tokens: 100
+    api-refill-duration-seconds: 60
+
+server:
+  port: 8080
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/hiremate_db}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        default_batch_fetch_size: 50
+        jdbc:
+          batch_size: 25
+        order_inserts: true
+        order_updates: true
+  mail:
+    host: ${SPRING_MAIL_HOST:smtp.sendgrid.net}
+    port: ${SPRING_MAIL_PORT:587}
+    username: ${SPRING_MAIL_USERNAME:apikey}
+    password: ${SPRING_MAIL_PASSWORD:secret}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:9a6e2c8f1a4b7d3e5f8c9b2a1d4e7f3c6a9b8c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0}
+    expiration-ms: ${JWT_EXPIRATION_MS:900000}
+    refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
+  cors:
+    allowed-origins: ${ALLOWED_ORIGINS:http://localhost:3000}
+    allowed-methods: "GET,POST,PUT,PATCH,DELETE,OPTIONS"
+    allowed-headers: "*"
+    allow-credentials: true
+  s3:
+    enabled: true
+    bucket-name: ${AWS_S3_BUCKET:hiremate-resumes-prod}
+    region: ${AWS_REGION:us-east-1}
+    access-key: ${AWS_ACCESS_KEY_ID:secret}
+    secret-key: ${AWS_SECRET_ACCESS_KEY:secret}
+  storage:
+    local-dir: ./uploads/resumes
+  mail:
+    from-email: ${MAIL_FROM_EMAIL:no-reply@hiremate.com}
+    sender-name: ${MAIL_SENDER_NAME:HireMate Platform}
+  rate-limiting:
+    enabled: true
+    auth-capacity: ${RATE_LIMIT_AUTH_CAPACITY:5}
+    auth-refill-tokens: 5
+    auth-refill-duration-seconds: 60
+    api-capacity: ${RATE_LIMIT_API_CAPACITY:100}
+    api-refill-tokens: 100
+    api-refill-duration-seconds: 60
+
+server:
+  port: ${PORT:8080}
